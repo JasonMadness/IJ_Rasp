@@ -18,19 +18,17 @@ namespace IJ_Rasp_02_OnlineStore
             warehouse.Delive(iPhone12, 10);
             warehouse.Delive(iPhone11, 1);
 
-            //Вывод всех товаров на складе с их остатком
             warehouse.ShowInfo();
 
             Cart cart = shop.GetNewCart();
             cart.PickProducts(iPhone12, 4);
-            cart.PickProducts(iPhone11, 3); //при такой ситуации возникает ошибка так, как нет нужного количества товара на складе
+            cart.PickProducts(iPhone11, 3); 
 
-            //Вывод всех товаров в корзине
             cart.ShowInfo();
 
             Console.WriteLine(cart.GetOrder().Paylink);
 
-            cart.PickProducts(iPhone12, 9); //Ошибка, после заказа со склада убираются заказанные товары
+            cart.PickProducts(iPhone12, 9); 
         }
     }
 
