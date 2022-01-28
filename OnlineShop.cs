@@ -39,6 +39,9 @@ namespace IJ_Rasp_02_OnlineStore
 
         public Shop(Warehouse warehouse)
         {
+            if (warehouse == null)
+                throw new ArgumentNullException(nameof(warehouse));
+
             _warehouse = warehouse;
         }
 
@@ -60,6 +63,12 @@ namespace IJ_Rasp_02_OnlineStore
 
         public void Delive(Product product, int count)
         {
+            if (product == null)
+                throw new ArgumentNullException(nameof(product));
+
+            if (count < 1)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
             Stockpile stockpile = new Stockpile(product, count);
             AddStockpile(stockpile);
         }
@@ -76,6 +85,9 @@ namespace IJ_Rasp_02_OnlineStore
 
         public void Init(Warehouse warehouse)
         {
+            if (warehouse == null)
+                throw new ArgumentNullException();
+
             _warehouse = warehouse;
         }
 
@@ -107,6 +119,9 @@ namespace IJ_Rasp_02_OnlineStore
 
         public void AddStockpile(Stockpile stockpile)
         {
+            if (stockpile == null)
+                throw new ArgumentNullException(nameof(stockpile));
+
             _stockpiles.Add(stockpile);
         }
 
@@ -159,12 +174,21 @@ namespace IJ_Rasp_02_OnlineStore
 
         public Stockpile(Product product, int count)
         {
+            if (product == null)
+                throw new ArgumentNullException(nameof(product));
+
+            if (count < 1)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
             Product = product;
             Count = count;
         }
 
         public void DecreaseCount(int count)
         {
+            if (count > Count)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
             Count -= count;
         }
     }
