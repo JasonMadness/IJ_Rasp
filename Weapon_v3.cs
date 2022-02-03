@@ -8,6 +8,8 @@ class Weapon
     private int _bullets;
     private int _maxBullets = 30;
 
+    private const int BulletsPerShot = 1;
+
     public Weapon(int damage, int bullets)
     {
         if (damage < _minDamage || damage > _maxDamage)
@@ -30,13 +32,13 @@ class Weapon
 
     private bool CanFire()
     {
-        return _bullets > 0;
+        return _bullets > BulletsPerShot;
     }
 
     private void Fire(Player player)
     {
         player.TakeDamage(_damage);
-        _bullets -= 1;
+        _bullets -= BulletsPerShot;
     }
 }
 
