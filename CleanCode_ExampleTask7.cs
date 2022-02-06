@@ -3,7 +3,7 @@ public static void CreateObject()
     throw new NotImplementedException();
 }
 
-public static void ChangeChance()
+public static void RandomiseChance()
 {
     _chance = Random.Range(0, 100);
 }
