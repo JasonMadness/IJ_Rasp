@@ -1,6 +1,6 @@
 public static void CreateObject()
 {
-    //Создание объекта на карте
+
 }
 
 public static void ChangeChance()
