@@ -1,6 +1,6 @@
 public static void CreateObject()
 {
-     
+    throw new NotImplementedException();
 }
 
 public static void ChangeChance()
