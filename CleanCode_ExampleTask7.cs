@@ -1,6 +1,6 @@
 public static void CreateObject()
 {
-    
+     
 }
 
 public static void ChangeChance()
