@@ -1,9 +1,9 @@
-public static int LimitValue(int value, int minLimit, int maxLimit)
+public static int Limit(int value, int min, int max)
 {
-    if (value < minLimit)
-        return minLimit;
-    else if (value > maxLimit)
-        return maxLimit;
+    if (value < min)
+        return min;
+    else if (value > max)
+        return max;
     else
         return value;
 }
