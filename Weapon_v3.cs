@@ -24,6 +24,10 @@
             player.TakeDamage(_damage);
             _bullets -= BulletsPerShot;
         }
+        else
+        {
+            throw new NotImplementedException();
+        }
     }
 
     private bool CanFire()
