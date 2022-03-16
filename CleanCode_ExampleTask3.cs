@@ -1,7 +1,7 @@
 class Weapon
 {
-    private int _bullets;
     private const int BulletsPerShot = 1;
+    private int _bullets;
 
     public bool CanShoot() => _bullets >= BulletsPerShot;
 
