@@ -1,6 +1,6 @@
-﻿namespace IJ_Rasp03_Logging
+﻿namespace Rasp_Logger
 {
-    public interface ILogger
+    internal interface ILogger
     {
         void WriteError(string message);
     }

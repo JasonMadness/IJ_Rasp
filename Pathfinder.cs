@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IJ_Rasp03_Logging
+namespace Rasp_Logger
 {
     internal class Pathfinder
     {

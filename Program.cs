@@ -1,23 +1,25 @@
-﻿namespace IJ_Rasp03_Logging
+﻿using System;
+
+namespace Rasp_Logger
 {
     internal class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            FileLogWritter fileLogWritter = new FileLogWritter();
-            Pathfinder pathfinder1 = new Pathfinder(fileLogWritter);
+            FileLogWriter fileLogWriter = new FileLogWriter();
+            Pathfinder pathfinder1 = new(fileLogWriter);
             pathfinder1.Find("1");
-            ConsoleLogWritter consoleLogWritter = new ConsoleLogWritter();
-            Pathfinder pathfinder2 = new Pathfinder(consoleLogWritter);
+            ConsoleLogWriter consoleLogWriter = new ConsoleLogWriter();
+            Pathfinder pathfinder2 = new(consoleLogWriter);
             pathfinder2.Find("2");
-            FridayLogWritter fridayFileLogWritter = new FridayLogWritter(fileLogWritter);
-            Pathfinder pathfinder3 = new Pathfinder(fridayFileLogWritter);
+            FridayLogWriter fridayFileLogWriter = new FridayLogWriter(fileLogWriter);
+            Pathfinder pathfinder3 = new(fridayFileLogWriter);
             pathfinder3.Find("3");
-            FridayLogWritter fridayConsoleLogWritter = new FridayLogWritter(consoleLogWritter);
-            Pathfinder pathfinder4 = new Pathfinder(fridayConsoleLogWritter);
+            FridayLogWriter fridayConsoleLogWriter = new FridayLogWriter(consoleLogWriter);
+            Pathfinder pathfinder4 = new(fridayConsoleLogWriter);
             pathfinder4.Find("4");
-            ConsoleLogWritter consolePlusFridayFileLogWriter = new ConsoleLogWritter(fridayFileLogWritter);
-            Pathfinder pathfinder5 = new Pathfinder(consolePlusFridayFileLogWriter);
+            ConsoleLogWriter consolePlusFridayFileLogWriter = new ConsoleLogWriter(fridayFileLogWriter);
+            Pathfinder pathfinder5 = new(consolePlusFridayFileLogWriter);
             pathfinder5.Find("5");
         }
     }
